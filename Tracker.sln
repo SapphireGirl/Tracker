@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker", "Tracker\Tracker.csproj", "{CA9D7F91-0B2E-4A3B-975F-5C4DB5D3993C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Tests", "Tracker.Tests\Tracker.Tests.csproj", "{74AED98A-7E3C-4027-AD63-FE0DC7AAD382}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA9D7F91-0B2E-4A3B-975F-5C4DB5D3993C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9D7F91-0B2E-4A3B-975F-5C4DB5D3993C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9D7F91-0B2E-4A3B-975F-5C4DB5D3993C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9D7F91-0B2E-4A3B-975F-5C4DB5D3993C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74AED98A-7E3C-4027-AD63-FE0DC7AAD382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74AED98A-7E3C-4027-AD63-FE0DC7AAD382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74AED98A-7E3C-4027-AD63-FE0DC7AAD382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74AED98A-7E3C-4027-AD63-FE0DC7AAD382}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
