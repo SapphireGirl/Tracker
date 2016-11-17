@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Products";
+}
+@section scripts {
+    <script src="~/App/Skills/App.js"></script>
+    <script src="~/App/Skills/ViewModels/RootViewModel.js"></script>
+    <script src="~/App/Skills/ViewModels/SkillsHomeViewModel.js"></script>
+    <script src="~/App/Skills/ViewModels/SkillsListViewModel.js"></script>
+    <script src="~/App/Skills/ViewModels/SkillsViewModel.js"></script>
+}
+@section jsCode {
+    angular.bootstrap(document.getElementById("skill"), ['skill']);
+}
+
+<div ng-non-bindable>
+    <div id="skill" data-ng-controller="rootViewModel">
+        <h2>{{ pageHeading }}</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ng-click="skillsList()">Skills List</button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary" ng-click="showSkill()">Skill</button>&nbsp;
+                <input type="text" ng-model="skillsService.skillsetId" />
+            </div>
+        </div>
+        <hr />
+        <div ng-view></div>
+        <hr />
+        <div>
+            <a href="#" ng-click="viewModelHelper.refreshPage('resume')">Resumes</a><!-- note: NOT navigateTo -->
+            &nbsp;|&nbsp;
+            <a href="#" ng-click="viewModelHelper.refreshPage('skills')">Products</a>
+            &nbsp;|&nbsp;
+          
+        </div>
+    </div>
+</div>

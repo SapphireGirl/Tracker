@@ -1,0 +1,22 @@
+﻿<h3>Product List</h3>
+<div>
+    <a href="#" ng-click="refreshSkills()"><span class="glyphicon glyphicon-refresh"></span></a>
+</div>
+<div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>SkillName</th>
+                <th>Number of Years</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="s in skills">
+            <tr>
+                <td><a href="#" ng-click="showSkill(s)">show</a></td>
+                <td>{{ s.SkillName }}</td>
+                <td>{{ s.NoOfYears_Months | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

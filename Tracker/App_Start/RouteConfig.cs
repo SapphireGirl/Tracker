@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Tracker
@@ -18,6 +14,26 @@ namespace Tracker
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+               name: "resume",
+               url: "resume/{*catch-all}",
+               defaults: new
+               {
+                   controller = "Home",
+                   action = "Resume"
+               });
+
+            routes.MapRoute(
+                name: "skills",
+                url: "skills/{*catch-all}",
+                defaults: new
+                {
+                    controller = "Home",
+                    action = "Skills"
+                });
+
+            routes.MapMvcAttributeRoutes();
         }
     }
 }

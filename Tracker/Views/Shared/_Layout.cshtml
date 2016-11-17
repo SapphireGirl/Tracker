@@ -2,43 +2,63 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ASP.NET MVC with Angular JS</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body data-ng-app="main" class="responsive">
+    <div id="banner" class="navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+            <div class="row banner">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="ui-corner-all col-sm-3, col-md-3, col-lg-3">
+                        <img src="~/Images/TwitterAvatar.jpg" alt="avatar" />
+                    </div>
+                    <div class="navbar-collapse collapse col-sm-3, col-md-3, col-lg-3">
+                        <ul class="portfolioNavigation">
+                            <li>
+                                @Html.ActionLink("Justine's Portfolio",
+                                "Index",
+                                "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Resumes",
+                                "Resume",
+                                "Home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Skills",
+                                "Skills",
+                                "Home")
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Justine Alires Portfolio</p>
+    </footer>
+</div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+@Scripts.Render("~/bundles/angular")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script type="text/javascript">
+            window.MyApp = {};
+            MyApp.rootPath = '@Url.Content("~")';
+</script>
+<script src="~/App/Validator.js"></script>
+<script src="~/App/App.js"></script>
+@RenderSection("scripts", required: false)
+<script type="text/javascript">
+            @RenderSection("jsCode", required: false)
+</script>
 </body>
 </html>

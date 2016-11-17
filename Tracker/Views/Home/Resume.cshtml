@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Resumes";
+}
+@section scripts {
+    <script src="~/App/Resume/App.js"></script>
+    <script src="~/App/Resume/ViewModels/RootViewModel.js"></script>
+    <script src="~/App/Resume/ViewModels/ResumeHomeViewModel.js"></script>
+    <script src="~/App/Resume/ViewModels/ResumeListViewModel.js"></script>
+    <script src="~/App/Resume/ViewModels/ResumeViewModel.js"></script>
+}
+@section jsCode {
+    angular.bootstrap(document.getElementById("resume"), ['resume']);
+}
+
+<div ng-non-bindable>
+    <div id="resume" data-ng-controller="rootViewModel">
+        <h2>{{ pageHeading }}</h2>
+        <h1>This is the resume.cshtml</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary"
+                        ng-click="navToResume()">
+                    Show Skill set List of Resume
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary"
+                        ng-click="showResume()">
+                    Show Resume Button
+                </button>&nbsp;
+                <input type="text"
+                       ng-model="resumeService.resumeId" />
+            </div>
+        </div>
+        <hr />
+        <div ng-view></div>
+        <hr />
+        <div>
+            <a href="/resume" target="_self">Resume on cshtml</a>
+            
+        </div>
+    </div>
+</div>

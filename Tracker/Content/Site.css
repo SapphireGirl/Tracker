@@ -1,14 +1,27 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css");
+
+body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+    overflow-x: hidden;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
 
+    /*For position below the banner*/
+    position: absolute;
+    border: 0;
+    top: 200px;
+    width: 100%;
+    overflow: auto;
+}
+/*TODO: Fix Navigation for mobile and large desktop viewports 
+http://bootsnipp.com/snippets/featured/mobile-nav-bar
+
+*/
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -20,5 +33,201 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    /*max-width: 280px;*/
 }
+/*-------Nav Bar/Banner-----------------------*/
+img {
+    /*display: block;*/
+    border-radius: 8px;
+    max-width: 175px;
+    height: 175px;
+}
+#banner {
+    /*border: 1px solid black;*/
+    top: 0;
+    z-index: 1030;
+    height: 208px;
+    width: auto;
+    -ms-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-color: hotpink;
+    margin: 0;
+    /*margin: 0 -9999rem;*/
+  /* add back negative margin value */
+   /*padding: 0.25rem 9999rem;*/
+}
+/* .navbar-fixed-top {
+  top: 0;
+  z-index: 1030;
+}*/
+.portfolioNavigation li {
+    display: block;
+    list-style-type: none;
+}
+.portfolioNavigation li a {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2em;
+}
+/*Taken from bootsnipp.com/snippets/featured/mobile-nav-bar*/
+body.navbar-more-show  {
+	overflow: hidden;
+}
+
+.animate {
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.navbar {
+    height: calc(100%);
+	max-height: 300px;
+	-webkit-transform: translate(0px, calc(-100% + 69px));
+	transform: translate(0px, calc(-100% + 69px));
+}
+.navbar .container:not(.navbar-more) {
+    padding: 0px;
+}
+.navbar-more-overlay {
+	background-color: rgba(102, 102, 102, 0.55);
+	display: none;
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1029;
+}
+.navbar-more-show > .navbar-more-overlay {
+	display: block;
+}
+.navbar-more-show > .navbar {
+	-webkit-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+}
+.navbar-nav.mobile-bar {
+	list-style: none;
+	-ms-box-orient: horizontal;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	margin: 0px 0px;
+}
+.navbar-nav.mobile-bar > li {
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	text-align: center;
+}
+.navbar-nav.mobile-bar > li > a > span.menu-icon {
+	display: block;
+	font-size: 1.8em;
+}
+.navbar-more {
+	background-color: rgb(255, 255, 255);
+	height: calc(100% - 69px);
+	overflow: auto;
+}
+.navbar-more .navbar-form {
+	border-width: 0px;
+}
+.navbar-more .navbar-nav > li > a {
+    color: rgb(64, 64, 64);   
+}
+.navbar-more > .navbar-nav > li > a > span.menu-icon {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+/*----------------------------------------------------------------*/
+.container {
+    position: relative;
+    margin: 0;
+    padding: 1em;
+}
+
+.SearchBox {
+    font-size: 1.1em;
+    float: left; 
+    overflow: auto;
+    background-color: white;
+    padding: 15px; 
+    border: #94C solid thin;
+    
+    /*min-height: 500px;*/
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+.siloBorder {
+    border: solid black;
+    border-radius: 6px;
+}
+/* Super Screen*/
+@media (min-width: 1200px) {
+  .responsive {
+        width: 49.99999%;
+        margin: 8px 0;
+    }
+}
+
+/*Large screen*/
+@media screen and (max-width: 960px) {
+.responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+/*Small Screen*/
+@media screen and (max-width: 768px) {
+.responsive {
+        width: 25.00%;
+        margin: 3px 0;
+    }
+}
+/*Tablet*/
+@media screen and (max-width: 550px)and (vertical-scrollbar:[inside|outside|on-top]) {
+.responsive {
+        width: 15%;
+        margin: 6px 0;
+    }
+}
+/*Phone*/
+@media screen and (max-width: 320px) and (vertical-scrollbar:[inside|outside|on-top]){
+.responsive {
+        width: 10%;
+        margin: 6px 0;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.full-width {
+  width: 100%;
+  /*background: #ccc;*/
+}
+.full-width-bar {
+    /* css-tricks.com*/
+    /* You do not want to trigger horizontal scrolling */
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+    background: #000000;
+}
+
